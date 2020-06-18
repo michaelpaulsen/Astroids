@@ -1,5 +1,5 @@
 #include <chrono>
-#include "../Skele_lib/utils/Utils.cpp"
+#include "../Skele_lib/utils/Utils.h"
 struct Screen {
 	static const int height = 56;
 	static const int width = 100;
@@ -21,7 +21,7 @@ struct Game{
 	static void display() {
 		for (int y = 0; y < Screen::height; y++) {
 			for (int x = 0; x < Screen::width; x++) {
-				Game::screen[Screen::toScreenChord(x, y)] = Game::bgChar;
+					Game::screen[Screen::toScreenChord(x, y)] = Game::bgChar;
 				if (y % 2 == 0) {
 					Game::screen[Screen::toScreenChord(x,y)] = 2;
 				}
