@@ -13,6 +13,11 @@ struct Game{
 	static wchar_t* screen;
 	static int fps ; // the fps that the game should run at (defalt 10)
 	static long frame;// the frame that the game is on 
+	static void displayFrame() {
+		Game::screen[2] = Skele_lib::Utils::longToChar(Game::frame);
+		Game::screen[1] = Skele_lib::Utils::longToChar(Game::frame / 10);
+		Game::screen[0] = Skele_lib::Utils::longToChar(Game::frame / 100);
+	}
 	static void display() {
 		for (int y = 0; y < Screen::height; y++) {
 			for (int x = 0; x < Screen::width; x++) {
@@ -20,8 +25,7 @@ struct Game{
 				if (y % 2 == 0) {
 					Game::screen[Screen::toScreenChord(x,y)] = 2;
 				}
-				Game::screen[1] = Game::frame % 10 + 48; 
-				Game::screen[0] = (Game::frame / 10) % 10 + 48;
+				Game::displayFrame(); 
 			}
 		}
 		Game::Wait();
