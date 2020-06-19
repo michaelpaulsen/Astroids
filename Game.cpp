@@ -1,13 +1,6 @@
 #include <chrono>
+#include "Screen.h"
 #include "../Skele_lib/utils/Utils.h"
-struct Screen {
-	static const int height = 56;
-	static const int width = 100;
-	static const int lastIndex = Screen::height * Screen::width - 1;
-	static int toScreenChord(int x, int y) {
-		return Screen::width * y + x;
-	};
-};
 struct Game{
 	static char bgChar;
 	static wchar_t* screen;
