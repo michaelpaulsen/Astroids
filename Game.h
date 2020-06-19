@@ -12,6 +12,9 @@ struct Game {
 		Game::screen[1] = Skele_lib::Utils::longToChar(Game::frame / 10);
 		Game::screen[0] = Skele_lib::Utils::longToChar(Game::frame / 100);
 	}
+	static void WritToScreenChord(int x, int y, char c) {
+		Game::screen[Screen::toScreenChord(x, y)] = c;
+	}
 	static void display() {
 		for (int y = 0; y < Screen::height; y++) {
 			for (int x = 0; x < Screen::width; x++) {
