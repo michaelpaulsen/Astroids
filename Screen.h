@@ -1,3 +1,4 @@
+#pragma once
 struct Screen {
 	static const int height = 56;
 	static const int width = 100;
