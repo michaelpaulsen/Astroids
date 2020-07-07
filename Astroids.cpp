@@ -16,6 +16,7 @@ int main()
 	/**game loop*/
 	while (playing) {
 		Game::display();
+		Game::WriteToScreenChord(player1.getX(), player1.getY(), player1.getDisplayCharFromAngle());
 		Game::frame++;
 
 		/**write the screen to the buffer*/
